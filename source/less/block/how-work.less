@@ -1,0 +1,27 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.how-work__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: item;
+}
+
+.how-work__item {
+  position: relative;
+  font-weight: 700;
+  color: @dark-blue-color;
+  font-size: @base-font-size + 2px;
+  line-height: @base-line-height - 4px;
+  background-color: #ff8d30;
+  border-radius: 10px;
+
+  &::after {
+    content: counter(item);
+    counter-increment: item;
+    font-size: inherit;
+    line-height: inherit;
+    color: @white-color;
+  }
+}
