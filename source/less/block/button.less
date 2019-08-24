@@ -13,4 +13,14 @@
   text-decoration: none;
   background-color: @lite-yellow;
   border-radius: 20px;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: @normal-yellow-color;
+  }
+
+  &:focus {
+    background-color: @normal-yellow-color;
+    color: rgba(@dark-blue-color, 0.3);
+  }
 }
