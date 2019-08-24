@@ -1,2 +1,52 @@
 @import "../global/variables";
 @import "../global/mixins";
+
+.contact-us {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-us--row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-us__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #ffbd30;
+  border-radius: 50%;
+  transition: 0.2s;
+
+  &:focus {
+    .contact-us__img {
+      opacity: 0.3;
+    }
+  }
+}
+
+.contact-us__link--phone {
+  background-color: #ff8d30;
+
+  &:hover {
+    background-color: #f26926;
+  }
+
+  &:focus {
+    background-color: #ff8d30;
+  }
+}
+
+.contact-us__link--mail {
+  &:hover {
+    background-color: #ff8d30;
+  }
+
+  &:focus {
+    background-color: #ff8d30;
+  }
+}

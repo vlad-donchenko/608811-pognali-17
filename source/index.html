@@ -44,15 +44,19 @@
           с крутыми попутчиками!
         </h1>
         <div class="site-header__help">
-          <ul class="contact-us">
+          <ul class="contact-us contact-us--row">
             <li class="contact-us__item">
-              <a href="#" class="contact-us__link contact-us__link--mail">
-                <span class="contact-us__icon"></span>
+              <a href="#" class="contact-us__link contact-us__link--phone" aria-label="Свзаться с нами">
+                <svg class="contact-us__img" width="18" height="18">
+                  <use xlink:href="#icon-topmenu-phone"></use>
+                </svg>
               </a>
             </li>
             <li class="contact-us__item">
-              <a href="#" class="contact-us__link contact-us__link--phone">
-                <span class="contact-us__icon"></span>
+              <a href="#" class="contact-us__link contact-us__link--mail" aria-label="Написать нами">
+                <svg class="contact-us__img" width="18" height="14">
+                  <use xlink:href="#icon-topmenu-mail"></use>
+                </svg>
               </a>
             </li>
           </ul>
@@ -76,19 +80,19 @@
             Как работает сервис
           </h2>
           <ol class="how-work__list">
-            <li class="how-work__item">
+            <li class="how-work__item how-work__item--direction">
               Выберите
               направление
             </li>
-            <li class="how-work__item">
+            <li class="how-work__item how-work__item--idea">
               Изучите идеи
               путешественников
             </li>
-            <li class="how-work__item">
+            <li class="how-work__item how-work__item--similar">
               Находите тех,
               кто похож на вас
             </li>
-            <li class="how-work__item">
+            <li class="how-work__item how-work__item--together">
               Путешествуйте
               вместе!
             </li>
@@ -96,5 +100,13 @@
         </section>
       </div>
   </header>
+  <main class="site-main">
+    <section class="about-service">
+      <div class="about-service__inner container">
+
+      </div>
+    </section>
+  </main>
+  <script src="js/scripts.min.js"></script>
   </body>
 </html>
