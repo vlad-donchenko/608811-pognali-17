@@ -2,6 +2,7 @@
 @import "../global/mixins";
 
 .button {
+  position: relative;
   display: inline-block;
   padding: 5px 39px;
   vertical-align: baseline;
@@ -22,5 +23,27 @@
   &:focus {
     background-color: @normal-yellow-color;
     color: rgba(@dark-blue-color, 0.3);
+
+    .button__icon {
+      opacity: 0.3;
+    }
   }
+}
+
+.button__icon {
+  fill: #1d2e5b;
+}
+
+.button--with-icon {
+  width: 100%;
+  padding: 16px 45% 16px 25px;
+  letter-spacing: 0.3px;
+  border-radius: 13px;
+  text-transform: inherit;
+}
+
+.button--with-icon .button__icon {
+  position: absolute;
+  right: 23px;
+  top: 24px;
 }

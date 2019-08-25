@@ -1,0 +1,60 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.countries__icon {
+  opacity: 0.1;
+}
+
+.countries__info-block {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px 26px 23px 25px;
+  top: -11px;
+  background-color: @white-color;
+  border-radius: 10px;
+}
+
+.countries {
+  padding: 0;
+  list-style: none;
+}
+
+.countries__img {
+  display: block;
+  border-radius: 10px;
+}
+
+.countries__name {
+  width: 50%;
+  margin: 0;
+  color: @dark-blue-color;
+  font-weight: 700;
+  line-height: @base-line-height - 1px;
+  font-size: @base-font-size + 5px;
+}
+
+.countries__promo {
+  width: 100%;
+  margin: 0;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+  line-height: @base-line-height - 4px;
+  font-size: @base-font-size;
+  color: rgba(@black-color, 0.3);
+}
+
+.countries__visitors {
+  width: 45%;
+  padding-top: 1px;
+  margin: 0 0 0 auto;
+  text-align: right;
+  color: rgba(@black-color, 0.3);
+  font-weight: 500;
+}
+
+.countries__flag {
+  position: absolute;
+  top: -12px;
+  left: 25px;
+}
