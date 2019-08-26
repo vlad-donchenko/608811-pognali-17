@@ -1,0 +1,54 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.companions {
+  position: relative;
+  padding-top: 70px;
+  background-color: @base-blue-color;
+  color: @white-color;
+  overflow: hidden;
+  z-index: 1;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 41px;
+    left: -18px;
+    width: 132px;
+    height: 132px;
+    background-color: #141b3b;
+    border-radius: 20px;
+    z-index: -1;
+  }
+}
+
+.companions__headline {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.companions__info-block {
+  position: relative;
+  margin-left: 25px;
+  width: 220px;
+}
+
+.companions__description {
+  font-size: @base-font-size;
+  line-height: @base-line-height;
+  font-weight: 300;
+}
+
+.companions__promo {
+  margin: 20px 0 0 0;
+  font-weight: 700;
+  line-height: @base-line-height;
+  font-size: @base-font-size;
+}
+
+.companions__img-decor {
+  position: absolute;
+  top: -31px;
+  right: -24px;
+  z-index: -1;
+}
