@@ -1,0 +1,48 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.rating {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.rating--traveler {
+  top: 14px;
+  left: 16px;
+  padding-top: 13px;
+  color: @white-color;
+  background-color: rgba(@clear-black, 0.6);
+}
+
+.rating__count {
+  position: relative;
+  margin: 0;
+  font-weight: 700;
+  text-align: center;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+  }
+}
+
+.rating__caption {
+  margin: 0;
+  text-align: center;
+}
+
+.rating--traveler .rating__count {
+  font-size: @base-font-size + 8px;
+
+  &::after {
+    bottom: -2px;
+    width: 31px;
+    height: 1px;
+    background-color: @white-color;
+  }
+}
