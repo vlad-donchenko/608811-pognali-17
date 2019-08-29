@@ -1,0 +1,29 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.hobbies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  width: 125px;
+  list-style: none;
+}
+
+.hobbies__icon {
+  opacity: 0.15;
+}
+
+.hobbies__item--active .hobbies__icon {
+  opacity: 1;
+  fill: #1d2e5b;
+}
+
+.hobbies__item {
+  margin-right: 17px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

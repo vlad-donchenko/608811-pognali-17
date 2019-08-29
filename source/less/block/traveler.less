@@ -1,0 +1,91 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.traveler {
+  padding-left: 0;
+  margin: 0;
+  color: #1d2e5b;
+  list-style: none;
+}
+
+.traveler__flags {
+  position: relative;
+  top: -11px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0;
+  margin: 0;
+  line-height: initial;
+  list-style: none;
+}
+
+.traveler__img {
+  display: block;
+  border-radius: 10px 10px 0 0;
+}
+
+.traveler__info-block {
+  position: relative;
+  padding: 0 5% 22px 5%;
+  background-color: @white-color;
+  border-radius: 0 0 10px 10px;
+}
+
+.traveler__flag-img {
+  display: block;
+}
+
+.traveler__name {
+  position: relative;
+  margin: -4px 0 0 39px;
+  padding-left: 17px;
+  width: 190px;
+  font-weight: 700;
+  font-size: @base-font-size + 5px;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    display: block;
+    vertical-align: middle;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+}
+
+.traveler__hash-tag {
+  margin: 15px 0;
+  text-align: center;
+  color: @black-color;
+  font-size: @base-font-size;
+  font-weight: 400;
+  line-height: @base-line-height - 4px;
+}
+
+.traveler__item--offline .traveler__name {
+  &::before {
+    background-color: @red-color;
+  }
+}
+
+.traveler__item--online .traveler__name {
+  &::before {
+    background-color: @green-color;
+  }
+}
+
+.traveler__flag {
+  margin-right: 17px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.traveler--companions {
+  margin-top: 58px;
+}
