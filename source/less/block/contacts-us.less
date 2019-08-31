@@ -1,0 +1,73 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+
+.contacts-us {
+  padding-left: 0;
+  list-style: none;
+}
+
+
+.contacts-us--interested {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.contacts-us__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.contacts-us--interested {
+  font-weight: 700;
+  font-size: @base-font-size;
+  line-height: @base-line-height;
+  text-decoration: none;
+}
+
+.contacts-us--interested .contacts-us__link {
+  color: @lite-yellow;
+
+  &:hover {
+    color: @normal-yellow-color;
+  }
+
+  &:focus {
+    opacity: 0.3;
+  }
+}
+
+.contacts-us__icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+  border-radius: 50%;
+}
+
+.contacts-us__icon svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  transform: translate(-50%, -50%);
+  fill: @lite-yellow;
+}
+
+.contacts-us--interested .contacts-us__icon {
+  width: 45px;
+  height: 45px;
+  background-color: @darken-blue-color;
+}
+
+.interested__item {
+  display: flex;
+}
+
+.contacts-us--interested .contacts-us__content {
+  margin-left: 16px;
+}
+
+.contacts-us__link--mail {
+  text-transform: uppercase;
+}

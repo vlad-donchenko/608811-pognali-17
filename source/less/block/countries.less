@@ -28,10 +28,22 @@
 .countries__name {
   width: 50%;
   margin: 0;
+}
+
+.countries__name a {
   color: @dark-blue-color;
   font-weight: 700;
   line-height: @base-line-height - 1px;
   font-size: @base-font-size + 5px;
+  text-decoration: none;
+
+  &:hover {
+    color: rgba(@dark-blue-color, 0.6);
+  }
+
+  &:focus {
+    color: rgba(@dark-blue-color, 0.3);
+  }
 }
 
 .countries__promo {
@@ -57,4 +69,8 @@
   position: absolute;
   top: -12px;
   left: 25px;
+}
+
+.countries__visual a {
+  display: block;
 }

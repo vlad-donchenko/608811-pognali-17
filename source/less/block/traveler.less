@@ -37,11 +37,17 @@
 }
 
 .traveler__name {
-  position: relative;
   margin: -4px 0 0 39px;
+  width: 160px;
+}
+
+.traveler__link {
+  position: relative;
+  display: block;
   padding-left: 17px;
-  width: 190px;
   font-weight: 700;
+  text-decoration: none;
+  color: #1d2e5b;
   font-size: @base-font-size + 5px;
 
   &::before {
@@ -55,6 +61,14 @@
     height: 5px;
     border-radius: 50%;
   }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:focus {
+    opacity: 0.3;
+  }
 }
 
 .traveler__hash-tag {
@@ -66,13 +80,13 @@
   line-height: @base-line-height - 4px;
 }
 
-.traveler__item--offline .traveler__name {
+.traveler__item--offline .traveler__link {
   &::before {
     background-color: @red-color;
   }
 }
 
-.traveler__item--online .traveler__name {
+.traveler__item--online .traveler__link {
   &::before {
     background-color: @green-color;
   }
@@ -113,4 +127,8 @@
 .traveler__item--second .traveler__hash-tag {
   width: 154px;
   margin-left: 52px;
+}
+
+.traveler__visual a {
+  display: block;
 }
