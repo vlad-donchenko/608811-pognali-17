@@ -1,0 +1,50 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.location {
+  position: relative;
+  padding-top: 32px;
+  padding-bottom: 35px;
+  background-color: @lite-yellow;
+  border-radius: 0 0 30px 30px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -33px;
+    height: 33px;
+    width: 100%;
+    background-color: @lite-yellow;
+    z-index: -1;
+  }
+}
+
+.location__address {
+  position: relative;
+  width: 204px;
+  padding-left: 61px;
+  margin: 0 0 32px 0;
+  font-weight: 700;
+  color: @base-blue-color;
+  text-transform: uppercase;
+}
+
+.location__icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: @darken-blue-color;
+}
+
+.location__icon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%);
+  fill: @lite-yellow;
+}
