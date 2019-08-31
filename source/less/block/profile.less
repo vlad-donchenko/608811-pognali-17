@@ -1,0 +1,98 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.profile {
+  position: relative;
+  padding-bottom: 25px;
+  border-radius: 0 0 30px 30px;
+  background-color: @light-blue-color;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: -30px;
+    height: 30px;
+    width: 100%;
+    background-color: @light-blue-color;
+  }
+}
+
+.profile__inner {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 50px;
+  padding-top: 51px;
+}
+
+.profile__icon-wrap {
+  width: 99px;
+  height: 99px;
+  margin-left: auto;
+}
+
+.profile__headline {
+  margin: 0;
+  width: 101px;
+}
+
+.profile__icon-wrap img {
+  position: relative;
+  top: -12px;
+}
+
+.profile__list {
+  width: 200px;
+  margin: 18px 0;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: profile-item;
+}
+
+.profile__item {
+  position: relative;
+  padding: 10px 15px 11px 0;
+  border-top: 1px solid #e1e3ea;
+
+  &::after {
+    content: counter(profile-item);
+    counter-increment: profile-item;
+    position: absolute;
+    right: -43px;
+    top: 3px;
+    width: 34px;
+    height: 34px;
+    color: @white-color;
+    line-height: @base-line-height + 11px;
+    text-align: center;
+    background-color: @orange-light-color;
+    border-radius: 50%;
+  }
+}
+
+.profile__item--input::after {
+  background-color: @normal-yellow-color;
+}
+
+.profile__item--colors::after {
+  background-color: @lite-yellow;
+}
+
+.profile__link {
+  color: @base-blue-color;
+  font-size: @base-font-size;
+  font-weight: 700;
+  line-height: @base-line-height - 6px;
+  text-decoration: none;
+
+  &:hover {
+    color: rgba(@base-blue-color, 0.7);
+  }
+
+  &:focus {
+    color: rgba(@base-blue-color, 0.3);
+  }
+}
+
+.profile__link-wrap {
+  margin: 10px 0;
+}
