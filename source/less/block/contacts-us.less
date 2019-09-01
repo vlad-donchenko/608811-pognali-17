@@ -1,25 +1,27 @@
 @import "../global/variables";
 @import "../global/mixins";
 
-
 .contacts-us {
   padding-left: 0;
   list-style: none;
 }
 
+.contacts-us--row {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .contacts-us--interested {
   margin-top: 20px;
   margin-bottom: 0;
-  font-weight: 700;
-  font-size: @base-font-size;
-  line-height: @base-line-height;
-  text-decoration: none;
 }
 
 .contacts-us__link {
   display: flex;
   align-items: center;
+  font-weight: 700;
+  font-size: @base-font-size;
+  line-height: @base-line-height;
   text-decoration: none;
 }
 
@@ -39,6 +41,8 @@
   position: relative;
   display: inline-block;
   vertical-align: baseline;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 
@@ -67,4 +71,39 @@
 
 .contacts-us__link--mail {
   text-transform: uppercase;
+}
+
+.contacts-us--promo {
+  width: 80px;
+  margin: 0;
+}
+
+.contacts-us--promo .contacts-us__icon {
+  color: #161c35;
+}
+
+.contacts-us__link--phone-top .contacts-us__icon {
+  background-color: @orange-color;
+}
+
+.contacts-us__link--phone-top:hover .contacts-us__icon {
+  background-color: @dark-orange-color;
+}
+
+.contacts-us__link--phone-top:focus .contacts-us__icon {
+  color: rgba(#161c35, 0.3);
+  background-color: @dark-orange-color;
+}
+
+.contacts-us__link--mail-top .contacts-us__icon {
+  background-color: @normal-yellow-color;
+}
+
+.contacts-us__link--mail-top:hover .contacts-us__icon {
+  background-color: @orange-color;
+}
+
+.contacts-us__link--mail-top:focus .contacts-us__icon {
+  color: rgba(#161c35, 0.3);
+  background-color: @orange-color;
 }
