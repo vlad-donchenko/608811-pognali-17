@@ -1,2 +1,29 @@
 @import "../global/variables";
 @import "../global/mixins";
+
+.menu__list {
+  display: none;
+}
+
+.menu__toggle {
+  width: 35px;
+  padding: 5px;
+  margin-right: -5px;
+  background: transparent;
+  border: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: @white-color;
+    margin-bottom: 5px;
+  }
+
+  &::after {
+    margin-bottom: 0;
+  }
+}
