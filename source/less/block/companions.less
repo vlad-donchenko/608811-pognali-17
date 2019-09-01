@@ -33,6 +33,34 @@
   position: relative;
   margin-left: 25px;
   width: 220px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -95px;
+    left: -59px;
+    display: block;
+    width: 71px;
+    height: 71px;
+    background-image: url("../img/rogovaya-back-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-size: 71px 71px;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -25px;
+    top: -32px;
+    display: block;
+    width: 143px;
+    height: 143px;
+    background-image: url("../img/smolov-back-desktop@1x.png");
+    background-repeat: no-repeat;
+    background-size: 143px 143px;
+    z-index: -1;
+  }
 }
 
 .companions__description {
@@ -46,11 +74,4 @@
   font-weight: 700;
   line-height: @base-line-height;
   font-size: @base-font-size;
-}
-
-.companions__img-decor {
-  position: absolute;
-  top: -31px;
-  right: -24px;
-  z-index: -1;
 }

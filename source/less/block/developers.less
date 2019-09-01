@@ -1,0 +1,31 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.developers {
+  padding-top: 13px;
+  border-top: 1px solid #f2f2f2;
+}
+
+.developers__link {
+  display: flex;
+  align-items: center;
+  color: @black-color;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:focus {
+    opacity: 0.3;
+  }
+}
+
+.developers__link img {
+  margin-left: auto;
+}
+
+.developers__text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
