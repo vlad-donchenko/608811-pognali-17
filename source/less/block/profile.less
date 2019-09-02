@@ -31,8 +31,8 @@
 }
 
 .profile__headline {
+  width: 45%;
   margin: 0;
-  width: 101px;
 }
 
 .profile__icon-wrap img {
@@ -41,9 +41,10 @@
 }
 
 .profile__list {
-  width: 200px;
+  width: 100%;
   margin: 18px 0;
   padding-left: 0;
+  padding-right: 43px;
   list-style: none;
   counter-reset: profile-item;
 }
@@ -66,6 +67,10 @@
     text-align: center;
     background-color: @orange-light-color;
     border-radius: 50%;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid #e1e3ea;
   }
 }
 

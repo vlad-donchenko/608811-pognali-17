@@ -22,6 +22,7 @@
 
 .traveler__img {
   display: block;
+  width: 100%;
   border-radius: 10px 10px 0 0;
 }
 
@@ -37,8 +38,8 @@
 }
 
 .traveler__name {
-  margin: -4px 0 0 39px;
-  width: 160px;
+  margin: -4px auto 0 auto;
+  width: 67%;
 }
 
 .traveler__link {
@@ -121,7 +122,8 @@
 }
 
 .traveler__item--second .traveler__name {
-  margin: 0 0 0 48px;
+  width: 61%;
+  margin: 0 auto 0 auto;
 }
 
 .traveler__item--second .traveler__hash-tag {
@@ -139,4 +141,19 @@
 
 .traveler__card:hover {
   box-shadow: 0 6px 21px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: @mobile-width) and (max-width: 767px) {
+  .traveler__name {
+    max-width: 162px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .traveler__hash-tag,
+  .traveler__item--second .traveler__hash-tag {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

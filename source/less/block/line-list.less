@@ -1,0 +1,18 @@
+@import "../global/variables";
+@import "../global/mixins";
+
+.line-list {
+  list-style: none;
+}
+
+.line-list li {
+  line-height: @base-line-height;
+  font-weight: 300;
+  font-size: @base-font-size;
+  color: @black-color;
+  border-top: 1px solid #f2f2f2;
+
+  &:last-child {
+    border-bottom: 1px solid #f2f2f2;
+  }
+}

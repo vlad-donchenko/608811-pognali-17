@@ -1,8 +1,71 @@
 @import "../global/variables";
 @import "../global/mixins";
 
-.menu__list {
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+
+.menu__wrap {
   display: none;
+  margin: 64px 0 0 0;
+}
+
+.menu__list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.menu__logo-blue {
+  display: none;
+}
+
+.menu__logo-white {
+  width: 100px;
+}
+
+.menu__item {
+  text-align: center;
+}
+
+.menu__link {
+  position: relative;
+  display: inline-block;
+  color: @base-blue-color;
+  font-size: @base-font-size * 2 - 2px;
+  line-height: @base-line-height + 10px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.menu__link span {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.2s;
+
+  &::before {
+    content: attr(data-hover);
+    position: absolute;
+    top: 100%;
+    font-weight: 400;
+    color: @lite-yellow;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.menu__link:hover span {
+  transform: translateY(-100%);
+}
+
+.menu__link:focus span {
+  opacity: 0.3;
+  transform: translateY(-100%);
 }
 
 .menu__toggle {
@@ -25,5 +88,93 @@
 
   &::after {
     margin-bottom: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.menu__help-block {
+  margin-top: 44px;
+}
+
+@media (min-width: 0) and (max-width: @desktop-width) {
+  .menu--no-js {
+    display: block;
+    width: 100%;
+    padding: 27px 25px 29px 25px;
+    background-color: @white-color;
+    order: -1;
+  }
+
+  .menu--open .menu__wrap,
+  .menu--no-js .menu__wrap {
+    display: block;
+  }
+
+  .menu--no-js .menu__toggle {
+    display: none;
+  }
+
+  .menu--open .menu__logo-white,
+  .menu--no-js .menu__logo-white {
+    display: none;
+  }
+
+  .menu--open .menu__logo-blue,
+  .menu--no-js .menu__logo-blue {
+    display: block;
+  }
+
+  .menu--open {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 27px 25px 29px 25px;
+    background-color: @white-color;
+    overflow-y: auto;
+    z-index: 7;
+  }
+
+  .menu--open .menu__wrap {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu--open .contacts-us--menu {
+    margin-top: auto;
+  }
+
+  .menu--open .menu__toggle {
+    position: absolute;
+    right: 28px;
+    top: 27px;
+
+    &::before,
+    &::after {
+      background-color: #cccccc;
+      margin: 0;
+    }
+
+    &::before {
+      top: 5px;
+      left: 3px;
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      top: 2px;
+      right: -4px;
+      transform: rotate(45deg);
+    }
   }
 }
