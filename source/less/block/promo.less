@@ -83,6 +83,10 @@
   background-image: linear-gradient(to top, @base-blue-color 77%, #161c35 23%);
 }
 
+.promo__author br {
+  display: none;
+}
+
 @media (min-width: @mobile-width) {
   .promo__help-block {
     &::after {
@@ -104,5 +108,74 @@
   .promo__help-block .button {
     flex-grow: 1;
     text-align: center;
+  }
+}
+
+@media (min-width: @table-width) {
+  .promo__inner {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  .promo__headline {
+    width: 63%;
+    order: -2;
+    margin-bottom: 88px;
+  }
+
+  .promo__reviews {
+    padding: 0 0 0 59px;
+    order: -1;
+    background-color: transparent;
+  }
+
+  .promo__comment {
+    width: 270px;
+    max-width: 100%;
+    margin-left: 0;
+    margin-bottom: 44px;
+    font-size: @base-font-size * 2 - 4px;
+    line-height: @base-line-height  + 11px;
+  }
+
+  .promo__author {
+    width: 260px;
+    max-width: 100%;
+    margin-left: 0;
+    line-height: @base-line-height + 3px;
+    font-size: @base-font-size + 5px;
+  }
+
+  .promo__author br {
+    display: block;
+  }
+
+  .promo {
+    background-color: #182044;
+    background-image: url(../img/globe-back-tablet@1x.jpg);
+    background-size: 1479px 612px;
+    background-position: center 245px;
+  }
+
+  .promo__help-block {
+    display: none;
+  }
+
+  .promo__how-work {
+    position: relative;
+    margin: 213px -40px 0 -40px;
+    padding: 0 40px;
+    background-image: linear-gradient(to bottom, #2d3250 50%, #192144 50%);
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 14.5%;
+      bottom: 100%;
+      width: 372px;
+      height: 451px;
+      background-image: url("../img/traveller-illustration-tablet@1x.png");
+    }
   }
 }
