@@ -24,29 +24,35 @@
   padding-top: 51px;
 }
 
-.profile__icon-wrap {
-  width: 99px;
-  height: 99px;
-  margin-left: auto;
-}
-
 .profile__headline {
   width: 45%;
   margin: 0;
 }
 
-.profile__icon-wrap img {
-  position: relative;
-  top: -12px;
-}
-
 .profile__list {
+  position: relative;
   width: 100%;
-  margin: 18px 0;
+  margin: 44px 0 18px 0;
   padding-left: 0;
   padding-right: 43px;
   list-style: none;
   counter-reset: profile-item;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: -130px;
+    right: 0;
+    width: 99px;
+    height: 99px;
+    background-image: url("../img/rates@1x.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/rates@2x.png");
+    }
+  }
 }
 
 .profile__item {
@@ -100,4 +106,216 @@
 
 .profile__link-wrap {
   margin: 10px 0;
+}
+
+.profile__hidden-symbol {
+  display: none;
+}
+
+.profile__link-icon {
+  display: none;
+}
+
+@media (min-width: @large-mobile) {
+  .profile__list {
+    &::after {
+      top: -120px;
+    }
+  }
+}
+
+@media (min-width: @small-tablet) {
+  .profile__list {
+    &::before {
+      top: -110px;
+    }
+  }
+}
+
+@media (min-width: @table-width) {
+  .profile {
+    border-radius: 0 0 60px 60px;
+    padding-bottom: 35px;
+  }
+
+  .profile__headline {
+    position: relative;
+    width: 499px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &::after {
+      content: "!";
+      position: absolute;
+      right: 8px;
+      top: 0;
+    }
+  }
+
+  .profile__hidden-symbol {
+    display: inline;
+  }
+
+  .profile__inner {
+    padding-top: 68px;
+  }
+
+  .profile__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0 18px 0;
+    font-size: @base-font-size * 2 - 4px;
+    line-height: @base-line-height + 11px;
+
+    &::after {
+      top: 0;
+      left: -92px;
+      right: inherit;
+      width: 67px;
+      height: 67px;
+      line-height: 66px;
+      font-size: 28px;
+    }
+  }
+
+  .profile__item span {
+    min-width: 130px;
+    margin-left: 70px;
+    text-align: right;
+  }
+
+  .profile__list {
+    position: relative;
+    margin-top: 34px;
+    padding: 45px 34px 45px 81px;
+    z-index: 1;
+
+    &::before {
+      top: inherit;
+      bottom: -71px;
+      right: 44px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 198px;
+      height: 100%;
+      background-color: #e2e5f2;
+      border-radius: 20px;
+      z-index: -1;
+    }
+  }
+
+  .profile__link {
+    display: flex;
+    align-items: center;
+    font-size: @base-font-size + 4px;
+    line-height: @base-line-height - 2px;
+    color: #132576;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:focus {
+      opacity: 0.3;
+    }
+  }
+
+  .profile__link-wrap {
+    width: 366px;
+    position: relative;
+    top: -30px;
+    left: -10px;
+    margin: 0;
+  }
+
+  .profile__link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 67px;
+    height: 67px;
+    margin-right: 23px;
+    background-color: #e2e5f2;
+    border-radius: 50%;
+  }
+
+  .profile__link-icon svg {
+    fill: #132576;
+  }
+}
+
+@media (min-width: @laptop) {
+  .profile__list {
+    width: 90%;
+    padding-right: 159px;
+
+    &::before {
+      top: 50%;
+      right: -110px;
+      width: 198px;
+      height: 198px;
+      transform: translate(0, -50%);
+    }
+
+    &::after {
+      width: 444px;
+    }
+  }
+
+  .profile__item span {
+    margin-left: 190px;
+  }
+}
+
+@media (min-width: @laptop-l) {
+  .profile {
+    padding-bottom: 139px;
+  }
+
+  .profile__inner {
+    padding-top: 102px;
+  }
+
+  .profile__headline {
+    margin-left: 424px;
+  }
+
+  .profile__list {
+    max-width: 1048px;
+    margin-top: 88px;
+    margin-left: 93px;
+    padding: 50px 159px 51px 81px;
+
+    &::before {
+      right: -114px;
+    }
+  }
+
+  .profile__link-wrap {
+    margin-left: 93px;
+  }
+
+  .profile__link {
+    position: relative;
+    padding-left: 85px;
+    padding-top: 19px;
+    padding-bottom: 19px;
+  }
+
+  .profile__link-icon {
+    position: absolute;
+    left: 0;
+    top: -2px;
+  }
+
+  .profile__link-icon svg {
+    position: absolute;
+    top: 18px;
+    left: 23px;
+  }
 }

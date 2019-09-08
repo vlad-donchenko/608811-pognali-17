@@ -29,3 +29,20 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+
+@media (min-width: @table-width) {
+  .developers {
+    border-top: none;
+  }
+
+  .developers__link {
+    font-size: @base-font-size + 4px;
+    line-height: @base-line-height + 2px;
+  }
+
+  .developers__text {
+    display: block;
+    margin-right: 25px;
+    margin-top: -6px;
+  }
+}

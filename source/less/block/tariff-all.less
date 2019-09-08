@@ -7,6 +7,7 @@
   left: 50%;
   display: none;
   width: 85%;
+  max-width: 750px;
   padding-top: 31px;
   background-color: @white-color;
   border-radius: 20px;
@@ -80,5 +81,57 @@
   .tariff-all__list {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media (min-width: @table-width) {
+  .tariff-all {
+    top: 100%;
+    width: 89.6%;
+    margin-top: 66px;
+    padding-top: 47px;
+    border-radius: 30px;
+  }
+
+  .tariff-all br {
+    display: none;
+  }
+
+  .tariff-all__list {
+    padding-left: 92px;
+    padding-right: 92px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .tariff-all__list li {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .tariff__close {
+    padding: 40px 0 44px 0;
+    font-size: @base-font-size + 8px;
+    line-height: @base-line-height + 2px;
+    text-transform: none;
+    border-radius: 0 0 30px 30px;
+  }
+}
+
+@media (min-width: @laptop) {
+  .tariff-all {
+    top: 15px;
+    margin-top: 0;
+  }
+
+  .tariff-all__list {
+    padding-left: 59px;
+    padding-right: 59px;
+  }
+}
+
+@media (min-width: @laptop-l) {
+  .tariff-all {
+    top: 109px;
   }
 }

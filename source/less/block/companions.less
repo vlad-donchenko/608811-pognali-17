@@ -10,18 +10,6 @@
   border-radius: 0 0 30px 30px;
   overflow: hidden;
   z-index: 1;
-
-  &::after {
-    content: " ";
-    position: absolute;
-    top: 41px;
-    left: -18px;
-    width: 132px;
-    height: 132px;
-    background-color: #141b3b;
-    border-radius: 20px;
-    z-index: -1;
-  }
 }
 
 .companions__headline {
@@ -35,16 +23,14 @@
   width: 81%;
 
   &::before {
-    content: "";
+    content: " ";
     position: absolute;
-    bottom: -95px;
-    left: -59px;
-    display: block;
-    width: 71px;
-    height: 71px;
-    background-image: url("../img/rogovaya-back-mobile@1x.png");
-    background-repeat: no-repeat;
-    background-size: 71px 71px;
+    top: -32px;
+    left: -69px;
+    width: 132px;
+    height: 132px;
+    background-color: #141b3b;
+    border-radius: 20px;
     z-index: -1;
   }
 
@@ -60,6 +46,10 @@
     background-repeat: no-repeat;
     background-size: 143px 143px;
     z-index: -1;
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/smolov-back-desktop@2x.png");
+    }
   }
 }
 
@@ -74,4 +64,111 @@
   font-weight: 700;
   line-height: @base-line-height;
   font-size: @base-font-size;
+}
+
+.companions__separator--tablet {
+  display: none;
+}
+
+@media (min-width: @table-width) {
+  .companions {
+    padding-top: 137px;
+    padding-bottom: 87px;
+    border-radius: 0 0 60px 60px;
+  }
+
+  .companions__description {
+    margin-top: 59px;
+    font-size: @base-font-size + 12px;
+    line-height: @base-line-height + 11px;
+  }
+
+  .companions__promo {
+    margin-top: 38px;
+    font-size: @base-font-size + 5px;
+    line-height: @base-line-height + 3px;
+  }
+
+  .companions__info-block {
+    margin-left: 33px;
+    width: 70%;
+
+    &::after {
+      right: inherit;
+      top: inherit;
+      bottom: -106px;
+      left: -33px;
+      width: 143px;
+      height: 143px;
+      background-image: url(../img/smolov-back-desktop@1x.png);
+      background-size: 143px 143px;
+
+      @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+        background-image: url(../img/smolov-back-desktop@2x.png);
+      }
+    }
+
+    &::before {
+      left: inherit;
+      top: -58px;
+      right: -138px;
+      width: 285px;
+      height: 285px;
+      background-image: url("../img/rogovaya-back-desktop@1x.png");
+      background-size: 285px 285px;
+
+      @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+        background-image: url("../img/rogovaya-back-desktop@2x.png");
+      }
+    }
+  }
+
+  .companions__separator--tablet {
+    display: block;
+  }
+}
+
+@media (min-width: @laptop) {
+  .companions__info-block {
+    width: 425px;
+    padding-bottom: 160px;
+
+    &::before {
+      left: 60px;
+      top: inherit;
+      bottom: -54px;
+    }
+
+    &::after {
+      right: 0;
+      top: 0;
+      left: inherit;
+    }
+  }
+
+  .companions__inner {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: @laptop-l) {
+  .companions {
+    padding-top: 126px;
+  }
+
+  .companions__info-block {
+    margin-left: 70px;
+
+    &::before {
+      bottom: -59px;
+    }
+
+    &::after {
+      right: -136px;
+      top: 8px;
+    }
+  }
 }

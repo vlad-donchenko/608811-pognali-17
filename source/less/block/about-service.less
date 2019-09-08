@@ -2,13 +2,17 @@
 @import "../global/mixins";
 
 .about-service {
-  position: relative;
-  padding-top: 32px;
-  padding-bottom: 81px;
   color: @white-color;
   background-color: @base-blue-color;
   border-radius: 0 0 30px 30px;
   overflow: hidden;
+  z-index: 1;
+}
+
+.about-service__inner {
+  position: relative;
+  padding-top: 32px;
+  padding-bottom: 81px;
   z-index: 1;
 
   &::before {
@@ -21,27 +25,30 @@
     height: 132px;
     background-color: #141b3b;
     border-radius: 20px;
-    z-index: -1;
+    z-index: -2;
   }
 
   &::after {
     content: " ";
     position: absolute;
-    top: 1px;
-    left: 50%;
-    display: block;
+    top: 0;
+    right: 3%;
     width: 292px;
     height: 352px;
     background-image: url("../img/about-mobile@1x.png");
-    background-size: contain;
+    background-position: center;
+    background-size: 292px 352px;
     background-repeat: no-repeat;
     z-index: -1;
-    transform: translate(-49%, 0);
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/about-mobile@2x.png");
+    }
   }
 }
 
 .about-service__headline {
-  margin: 0  0 20px 25px;
+  margin: 0 0 20px 25px;
 }
 
 .about-service__description {
@@ -57,4 +64,152 @@
   width: 82%;
   margin: 19px auto 0;
   font-weight: 700;
+}
+
+.about-service__separator--tablet {
+  display: none;
+}
+
+.about-service__hidden-world {
+  display: none;
+}
+
+.about-service__left {
+  z-index: 1;
+}
+
+@media (min-width: @table-width) {
+  .about-service {
+    border-radius: 0 0 60px 60px;
+  }
+
+  .about-service__inner {
+    padding-top: 135px;
+    padding-bottom: 88px;
+
+    &::before {
+      top: 94px;
+      left: 50%;
+      width: calc(100% - 80px);
+      height: 213px;
+      border-radius: 20px;
+      transform: translate(-50%, 0);
+    }
+
+    &::after {
+      top: 143px;
+      right: 8px;
+      width: 376px;
+      height: 548px;
+      background-image: url("../img/about-tablet@1x.png");
+      background-size: 376px 548px;
+
+      @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+        background-image: url("../img/about-tablet@2x.png");
+      }
+    }
+  }
+
+  .about-service__headline {
+    margin: 0 0 20px 33px;
+  }
+
+  .about-service__left {
+    width: 48.8%;
+  }
+
+  .about-service__description {
+    width: auto;
+    margin: 41px 0 0 36px;
+    font-size: @base-font-size * 2 - 4px;
+    line-height: @base-line-height + 11px;
+  }
+
+  .about-service__promo {
+    margin-left: 35px;
+    margin-top: 32px;
+    width: auto;
+    font-size: @base-font-size + 5px;
+    line-height: @base-line-height + 3px;
+  }
+
+  .about-service__separator {
+    display: none;
+  }
+
+  .about-service__separator--tablet {
+    display: block;
+  }
+
+  .about-service__hidden-world {
+    display: initial;
+  }
+}
+
+@media (min-width: @laptop) {
+  .about-service__inner {
+    padding-bottom: 163px;
+
+    &::before {
+      left: 40px;
+      width: 213px;
+      height: 213px;
+      transform: none;
+    }
+
+    &::after {
+      top: inherit;
+      bottom: 0;
+      width: 630px;
+      height: 665px;
+      background-image: url("../img/about-desktop@1x.png");
+      background-size: contain;
+
+      @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+        background-image: url("../img/about-desktop@2x.png");
+      }
+    }
+  }
+
+  .about-service__description,
+  .about-service__headline {
+    margin-left: 0;
+  }
+
+  .about-service__promo {
+    margin-left: 0;
+    width: 415px;
+  }
+
+  .about-service__left {
+    padding-left: 72px;
+    width: 54%;
+  }
+
+  .about-service__separator {
+    display: none;
+  }
+}
+
+@media (min-width: @laptop-l) {
+  .about-service__inner {
+    padding-top: 130px;
+
+    &::before {
+      top: 73px;
+      left: 59px;
+    }
+
+    &::after {
+      right: 60px;
+    }
+  }
+
+  .about-service__description {
+    margin-top: 58px;
+  }
+
+  .about-service__promo {
+    margin-top: 40px;
+  }
 }

@@ -61,6 +61,7 @@
   width: 60px;
   height: 62px;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .button--mailing svg {
@@ -76,6 +77,25 @@
   letter-spacing: 0.5px;
   background-color: transparent;
   border: 3px solid @base-blue-color;
+
+  &:hover {
+    color: @white-color;
+    background-color: @base-blue-color;
+
+    svg {
+      fill: @white-color;
+    }
+  }
+
+  &:focus {
+    color: rgba(@white-color, 0.3);
+    background-color: @base-blue-color;
+
+    svg {
+      fill: @white-color;
+      opacity: 0.3;
+    }
+  }
 }
 
 .button--menu {
@@ -83,4 +103,102 @@
   padding: 10px 39px;
   text-align: center;
   border-radius: 25px;
+}
+
+.button--service-details {
+  display: none;
+}
+
+@media (min-width: @table-width) {
+  .button--with-icon {
+    padding: 24px 25% 27px 30px;
+    font-size: @base-font-size + 8px;
+    border-radius: 20px;
+  }
+
+  .button--with-icon .button__icon {
+    right: 35px;
+    top: 33px;
+  }
+
+  .button--menu {
+    padding: 9px 31px 10px 28px;
+    font-size: @base-line-height - 2px;
+  }
+
+  .button--service-details {
+    display: inline-block;
+    width: 82%;
+    margin-left: 10%;
+    margin-top: 52px;
+    border-radius: 20px;
+  }
+
+  .button--mailing {
+    width: 82px;
+    height: 81px;
+    border-radius: 0 20px 20px 0;
+  }
+
+  .button--traveler-all {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 34px;
+    width: 90%;
+  }
+}
+
+@media (min-width: @laptop) {
+  .button--menu {
+    width: auto;
+  }
+
+  .button--service-details {
+    margin-left: 0;
+    width: auto;
+    padding: 24px 126px 27px 30px;
+  }
+
+  .button--traveler-all {
+    position: absolute;
+    bottom: 48px;
+    left: 93px;
+    width: auto;
+    margin: 0;
+    padding-right: 95px;
+  }
+
+  .button--mailing {
+    position: relative;
+    width: auto;
+    padding: 24px 149px 27px 37px;
+    text-transform: none;
+  }
+
+  .button--mailing svg {
+    left: inherit;
+    right: 36px;
+    transform: translate(0, -50%);
+  }
+
+  .button--mailing .visually-hidden {
+    position: static;
+    clip: inherit;
+    width: auto;
+    height: auto;
+    margin: 0;
+    font-size: @base-font-size + 8px;
+  }
+}
+
+@media (min-width: @laptop-l) {
+  .button--service-details {
+    margin-top: 85px;
+  }
+
+  .button--traveler-all {
+    left: 132px;
+    bottom: 45px;
+  }
 }

@@ -127,3 +127,124 @@
   margin-top: 52px;
   margin-bottom: 30px;
 }
+
+.contacts-us--laptop-visible {
+  display: none;
+}
+
+@media (min-width: @table-width) {
+  .contacts-us--menu .contacts-us__icon {
+    width: 68px;
+    height: 68px;
+    margin-right: 23px;
+  }
+
+  .contacts-us--menu svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .contacts-us--menu .contacts-us__link {
+    font-size: @base-font-size * 2 - 4px;
+    line-height: @base-line-height + 6px;
+  }
+
+  .contacts-us--menu {
+    margin-top: 128px;
+    margin-left: 57px;
+  }
+
+  .contacts-us__content--menu-phone {
+    padding-top: 5px;
+  }
+
+  .contacts-us--interested .contacts-us__icon {
+    width: 68px;
+    height: 68px;
+  }
+
+  .contacts-us--interested svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .contacts-us--interested .contacts-us__link {
+    font-size: @base-font-size + 12px;
+    line-height: @base-line-height + 6px;
+  }
+
+  .contacts-us--interested {
+    width: 400px;
+    margin-top: 41px;
+    margin-left: 36px;
+  }
+
+  .contacts-us--interested .contacts-us__content {
+    margin-left: 21px;
+  }
+}
+
+@media (min-width: @laptop) {
+  .contacts-us--menu {
+    display: none;
+  }
+
+  .contacts-us--laptop-visible {
+    display: flex;
+    order: -1;
+    margin: 0;
+  }
+
+  .contacts-us--laptop-visible .contacts-us__link {
+    color: #161c35;
+  }
+
+  .contacts-us--laptop-visible .contacts-us__icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contacts-us--interested {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 868px;
+  }
+
+  .contacts-us--interested .contacts-us__item {
+    margin-right: 111px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (min-width: @laptop-l) {
+  .contacts-us--interested {
+    justify-content: flex-start;
+    margin-left: 224px;
+    margin-top: 48px;
+    max-width: 900px;
+  }
+
+  .contacts-us--interested .contacts-us__icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .contacts-us--interested svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contacts-us--interested .contacts-us__item {
+    margin-right: 112px;
+  }
+
+  .contacts-us--interested .contacts-us__content {
+    margin-left: 30px;
+  }
+}

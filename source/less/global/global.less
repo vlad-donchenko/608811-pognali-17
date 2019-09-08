@@ -3,10 +3,12 @@
 @import "mixins";
 
 html {
+  height: 100%;
   box-sizing: border-box;
 }
 
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   min-width: 320px;
@@ -32,4 +34,12 @@ body {
 img {
   max-width: 100%;
   height: auto;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 0 auto;
 }

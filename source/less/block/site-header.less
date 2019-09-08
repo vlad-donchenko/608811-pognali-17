@@ -2,6 +2,83 @@
 @import "../global/mixins";
 
 .site-header {
+  min-height: 79px;
   color: @white-color;
   background-color: @dark-blue-color;
+}
+
+.site-header__inner--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: @white-color;
+  animation-name: menu-fixed;
+  animation-duration: 0.7s;
+  z-index: 10;
+}
+
+.site-header__inner--fixed .menu__logo-white {
+  display: none;
+}
+
+.site-header__inner--fixed .menu__logo-blue {
+  display: block;
+}
+
+.site-header__inner--fixed .menu {
+  padding-bottom: 21px;
+}
+
+.site-header__inner--fixed .menu__toggle {
+  &::before,
+  &::after {
+    background-color: #cccccc;
+  }
+}
+
+@keyframes menu-fixed {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: @table-width) {
+  .site-header {
+    min-height: 132px;
+    background-color: #182044;
+  }
+
+  .site-header__inner--fixed .menu {
+    padding-top: 45px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width: @laptop) {
+  .site-header {
+    min-height: 105px;
+    background-color: #161c34;
+  }
+
+  .site-header__inner--fixed .menu__link {
+    color: @base-blue-color;
+  }
+
+  .site-header__inner--fixed .menu {
+    padding-top: 20px;
+    padding-bottom: 12px;
+  }
+
+  .site-header__inner--fixed .menu__list::before {
+    left: -90px;
+    width: 45px;
+    background-color: @base-blue-color;
+  }
 }

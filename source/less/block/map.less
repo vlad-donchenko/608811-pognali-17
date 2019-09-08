@@ -26,3 +26,30 @@
   overflow: hidden;
   z-index: -1;
 }
+
+@media (min-width: @table-width) {
+  .map__iframe {
+    position: relative;
+    bottom: -11px;
+    height: 580px;
+    width: 100%;
+  }
+
+  .map__fallback {
+    height: 580px;
+  }
+
+  .map__fallback img {
+    width: 100%;
+  }
+}
+
+@media (min-width: @laptop) {
+  .map__iframe {
+    height: 490px;
+  }
+
+  .map__fallback {
+    height: 490px;
+  }
+}

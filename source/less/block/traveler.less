@@ -102,7 +102,27 @@
 }
 
 .traveler--companions {
+  position: relative;
   margin-top: 58px;
+  z-index: 1;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    left: -36px;
+    top: -36px;
+    display: block;
+    width: 71px;
+    height: 71px;
+    background-image: url("../img/rogovaya-back-mobile@1x.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/rogovaya-back-mobile@2x.png");
+    }
+  }
 }
 
 .traveler__hobbies {
@@ -155,5 +175,105 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media (min-width: @table-width) {
+  .traveler--companions {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 61px auto 0 auto;
+  }
+
+  .traveler--companions::before {
+    display: none;
+  }
+
+  .traveler--companions .traveler__item {
+    width: 46.3%;
+    display: flex;
+    margin-bottom: 48px;
+
+    &:nth-child(2n) {
+      margin-left: auto;
+    }
+  }
+
+  .traveler--companions .traveler__card {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+  }
+
+  .traveler__link {
+    font-size: @base-font-size + 8px;
+    line-height: @base-line-height + 2px;
+
+    &::before {
+      width: 7px;
+      height: 7px;
+      left: -4px;
+    }
+  }
+
+  .traveler__item--second .traveler__link::before {
+    left: -8px;
+  }
+
+  .traveler--companions .traveler__info-block {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5% 22px 5%;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .traveler__item--second .traveler__hash-tag {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .traveler__hash-tag {
+    width: 100%;
+    margin: 20px auto 27px auto;
+    font-size: @base-font-size + 4px;
+    line-height: @base-line-height + 2px;
+  }
+
+  .traveler__hobbies {
+    margin-top: auto;
+  }
+
+  .traveler__name {
+    margin-top: 0;
+    width: 72%;
+  }
+
+  .traveler__item--second .traveler__name {
+    margin-top: 4px;
+  }
+}
+
+@media (min-width: @laptop) {
+  .traveler--companions {
+    width: 630px;
+    margin-right: 0;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: @laptop-l) {
+  .traveler--companions {
+    padding-top: 8px;
+  }
+
+  .traveler--companions .traveler__item {
+    width: 285px;
+  }
+
+  .traveler--companions .traveler__img {
+    border-radius: 17px 17px 0 0;
   }
 }

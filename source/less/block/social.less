@@ -38,10 +38,51 @@
 }
 
 .social--menu {
+  width: 100%;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .social--menu .social__link {
   color: #cccccc;
+}
+
+@media (min-width: @table-width) {
+  .social__link--facebook svg {
+    width: 14px;
+    height: 28px;
+  }
+
+  .social__link--vkontakte svg {
+    width: 31px;
+    height: 16px;
+  }
+
+  .social__link--instagram svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .social--menu {
+    justify-content: flex-start;
+    margin-top: 85px;
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  .social--menu .social__link {
+    width: 61px;
+    height: 61px;
+  }
+
+  .social--yellow .social__link {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (min-width: @laptop) {
+  .social--menu {
+    display: none;
+  }
 }
